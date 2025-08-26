@@ -1,20 +1,25 @@
 import cv2 as cv
 
-img = cv.imread('Photos/person.jpg')
-cv.imshow('Person', img)
-
-gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-cv.imshow('Gray', gray)
-
 haar_cascade = cv.CascadeClassifier('haar_face.xml')
 
-faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=3)
-print(f'Number of faces found = {len(faces_rect)}')
+cap = cv.VideoCapture(0)
 
-for (x,y,w,h) in faces_rect:
-    cv.rectangle(img, (x,y), (x+w, y+h), (0,255,0), thickness=2)
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
 
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
-cv.imshow('Detected Fcae', img)
+    faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=3)
 
-cv.waitKey(0)
+    for (x,y,w,h) in faces_rect:
+        cv.rectangle(frame, (x,y), (x+w, y+h), (0,255,0), thickness=2)
+
+    cv.imshow('Detected Face', frame)
+
+    if cv.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv.destroyAllWindows()
