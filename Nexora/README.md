@@ -34,11 +34,11 @@ cosine_similarity([query_emb], product_embs)
 
 Ran 3 test queries:
 
-- energetic urban chic
+- "Energetic Urban Chic"
 
-- cozy weekend
+- "Cozy Weekend"
 
-- luxurious occasion
+- "Luxurious Occasion"
 
 Logged metrics like:
 
@@ -62,9 +62,9 @@ Top 3 matches for 'cozy weekend':
 ## Evaluation Metrics:
 | Query                | Top Score | Good Match |
 | -------------------- | --------- | ---------- |
-| energetic urban chic | 0.76      | ✅          |
-| cozy weekend         | 0.82      | ✅          |
-| luxurious occasion   | 0.79      | ✅          |
+| energetic urban chic | 0.688      | ✅          |
+| cozy weekend         | 0.670      | ✅          |
+| luxurious occasion   | 0.756      | ✅          |
 
 ✅ Accuracy: 100%
 
