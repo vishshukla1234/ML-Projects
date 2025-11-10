@@ -29,7 +29,7 @@ Used the `SentenceTransformer` model (`all-mpnet-base-v2` or `all-MiniLM-L6-v2`)
 Calculated cosine similarity between the query vector and all product vectors:
 ```python
 cosine_similarity([query_emb], product_embs)
-
+```
 ### 4. **Evaluation**
 
 Ran 3 test queries:
