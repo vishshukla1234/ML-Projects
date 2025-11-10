@@ -34,18 +34,48 @@ cosine_similarity([query_emb], product_embs)
 
 Ran 3 test queries:
 
-energetic urban chic
+- energetic urban chic
 
-cozy weekend
+- cozy weekend
 
-luxurious occasion
+- luxurious occasion
 
 Logged metrics like:
 
-Top similarity score
+- Top similarity score
 
-Whether score > threshold (good match)
+- Whether score > threshold (good match)
 
-Query latency using timeit
+- Query latency using timeit
 
-Calculated accuracy = fraction of queries with a "good match" (> 0.6)
+- Calculated accuracy = fraction of queries with a "good match" (> 0.6)
+
+### 5. Visualization
+Displayed latency plots and similarity bar charts to inspect model behavior.
+
+```python
+Top 3 matches for 'cozy weekend':
+1. Cozy Weekend Knit Sweater  →  0.82
+2. Plush Weekend Hoodie        →  0.80
+3. Comfy Lounge Pants          →  0.78
+```
+## Evaluation Metrics:
+| Query                | Top Score | Good Match |
+| -------------------- | --------- | ---------- |
+| energetic urban chic | 0.76      | ✅          |
+| cozy weekend         | 0.82      | ✅          |
+| luxurious occasion   | 0.79      | ✅          |
+
+✅ Accuracy: 100%
+
+### 6. ⚙️ Tech Stack
+
+- Python
+
+- Pandas, NumPy
+
+- SentenceTransformers
+
+- scikit-learn (cosine similarity)
+
+- Matplotlib (visualization)
